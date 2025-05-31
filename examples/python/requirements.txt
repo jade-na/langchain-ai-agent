@@ -7,3 +7,4 @@ dotenv
 pypdf
 faiss-cpu
 sentence-transformers
+chromadb
