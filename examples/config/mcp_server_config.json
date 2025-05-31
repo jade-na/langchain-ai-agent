@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "secsgem": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "E:\\OneDrive\\_YEOUL SOLUTION\\SECS GEM Seminar\\gRPC4SEMI\\servers-main\\src\\secsgem",
+		"run",
+        "secsgem.py"
+      ]
+    }
+  }
+}
