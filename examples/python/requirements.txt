@@ -1,10 +1,55 @@
-langchain-community
-langchain
-duckduckgo-search
+# Multi-MCP Agent Dependencies
+# LangChain core packages
+langchain>=0.1.0
+langchain-community>=0.0.20
+langchain-core>=0.1.0
+
+# Local LLM support (for LM Studio integration)
+langchain-openai>=0.0.5
 openai
-langchain_openai
+
+# Core mcp-use library
+mcp-use>=0.1.0
+
+# wet search
+duckduckgo-search
+
+# python .env
 dotenv
+
+# for RAG
 pypdf
 faiss-cpu
 sentence-transformers
 chromadb
+
+# Data validation and serialization
+pydantic>=2.0.0
+
+# HTTP requests for LM Studio connection check
+requests>=2.28.0
+
+# Async support
+asyncio-mqtt>=0.13.0  # Optional: if you need MQTT support
+aiofiles>=23.0.0      # Optional: for async file operations
+
+# JSON handling (usually included in Python standard library)
+# json - built-in module
+
+# Path handling (usually included in Python standard library) 
+# pathlib - built-in module
+
+# Process management (usually included in Python standard library)
+# subprocess - built-in module
+
+# Type hints (usually included in Python standard library for Python 3.9+)
+# typing - built-in module for Python 3.9+
+typing-extensions>=4.0.0  # For older Python versions or extended typing features
+
+# Optional: Development and debugging tools
+# Uncomment if needed for development
+# jupyter>=1.0.0
+# ipython>=8.0.0
+# pytest>=7.0.0
+# black>=23.0.0
+# flake8>=6.0.0
