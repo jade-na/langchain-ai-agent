@@ -42,7 +42,7 @@ agent = initialize_agent(
 | `SELF_ASK_WITH_SEARCH` | “질문을 나눠서 스스로 다시 물어보기” 패턴 | Self‑Ask + 검색 툴 | 복잡한 지식 탐색 |
 | `OPENAI_FUNCTIONS` | **Function‑calling** 전용 라우터 | 함수 매핑 테이블 | OpenAI 함수 호출 |
 | `STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION` | 구조화된 역할/도구 지시어 + ReAct | 시스템/도구 프롬프트 → ReAct | 명확한 역할 구분 필요 |
-| (참고) `REACT_DOCSTORE` 등 | 문서 저장소 전용, 현재는 **Deprecated** | – | – |
+| (참고) `REACT_DOCSTORE` 등 | 문서 저장소 전용, 현재는 <span style="color:red;">Deprecated</span> | – | – |
 
 ---
 
@@ -70,6 +70,19 @@ agent = initialize_agent(tools, llm,
 ### 4‑3. SELF_ASK
 * ⚙️ 내부적으로 “질문 분해 → 검색 → 조합”을 반복  
 * 자체 검색 툴(예: `ArxivSearchTool`, `SerpAPI`) 필요
+```python
+# 2. 검색 툴 준비
+search_tool = DuckDuckGoSearchRun()
+tools = [search_tool]
+
+# 3. SELF_ASK_WITH_SEARCH 에이전트 생성
+agent = initialize_agent(
+    tools=tools,
+    llm=llm,
+    agent=AgentType.SELF_ASK_WITH_SEARCH,
+    verbose=True           # Thought / Action 로그 확인용
+)
+```
 
 ### 4‑4. OPENAI_FUNCTIONS
 * 메시지를 함수 스펙과 함께 LLM에 전달 ↔ LLM이 JSON으로 함수 호출 결정  
