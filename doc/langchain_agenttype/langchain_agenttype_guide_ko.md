@@ -37,9 +37,9 @@ agent = initialize_agent(
 | AgentType (열거 값) | 요약 | 내부 전략 | 주 사용처 |
 |--------------------|------|-----------|-----------|
 | `ZERO_SHOT_REACT_DESCRIPTION` | 설명만 주면 **ReAct** 패턴으로 추론·행동 | 입력→(Thought/Action) 반복→Answer | 사전지식 없는 간단한 작업 |
-| `ZERO_SHOT_REACT_CHAT` | 위와 동일하지만 **Chat 모델** 최적화 | 동일 | 챗 기반 LLM(OpenAI GPT‑4o 등) |
+| `CHAT_ZERO_SHOT_REACT_DESCRIPTION` | 위와 동일하지만 **Chat 모델** 최적화 | 동일 | 챗 기반 LLM(OpenAI GPT‑4o 등) |
 | `CONVERSATIONAL_REACT_DESCRIPTION` (또는 `CHAT_CONVERSATIONAL_REACT_DESCRIPTION`) | 대화 기록(메모리)을 고려하는 ReAct | 대화 context + ReAct | 챗봇, 고객지원 |
-| `SELF_ASK` (`SELF_ASK_WITH_SEARCH`) | “질문을 나눠서 스스로 다시 물어보기” 패턴 | Self‑Ask + 검색 툴 | 복잡한 지식 탐색 |
+| `SELF_ASK_WITH_SEARCH` | “질문을 나눠서 스스로 다시 물어보기” 패턴 | Self‑Ask + 검색 툴 | 복잡한 지식 탐색 |
 | `OPENAI_FUNCTIONS` | **Function‑calling** 전용 라우터 | 함수 매핑 테이블 | OpenAI 함수 호출 |
 | `STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION` | 구조화된 역할/도구 지시어 + ReAct | 시스템/도구 프롬프트 → ReAct | 명확한 역할 구분 필요 |
 | (참고) `REACT_DOCSTORE` 등 | 문서 저장소 전용, 현재는 **Deprecated** | – | – |
